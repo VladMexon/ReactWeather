@@ -20,14 +20,22 @@ export default function WeatherComponent(props: IProps)
         
     },[props]);
     
-
-    return(
-        <div className={"daydiv"}>
-            <div className='day'>{weatherInf?.day}</div>
-            <div>{weatherInf?.time}</div>
-            <div>{weatherInf?.description}</div>
-            <img src={'http://openweathermap.org/img/wn/' + weatherInf?.image + '@2x.png'} alt="weather_image"></img>
-            <h1>{weatherInf?.temp + "°C"}</h1>
+    if(weatherInf?.description !== undefined || weatherInf?.image !== undefined || weatherInf?.temp !== undefined || weatherInf?.time !== undefined)
+    {
+        return(
+            <div className={"daydiv"}>
+                <div className='day'>{weatherInf?.day}</div>
+                <div>{weatherInf?.time}</div>
+                <div>{weatherInf?.description}</div>
+                <img src={'http://openweathermap.org/img/wn/' + weatherInf?.image + '@2x.png'} alt="weather_image"></img>
+                <h1>{weatherInf?.temp + "°C"}</h1>
+            </div>
+        )
+    }
+    else
+    {
+        return <div className={"daydiv"}>
+            Загрузка...
         </div>
-    )
+    }    
 }
