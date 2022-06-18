@@ -38,24 +38,11 @@ code {
   border-radius: 10px;
 }
 
-#day0{
-  font-weight: bold;
+.day{
+  font-weight:bold;
 }
-#day1{
-  font-weight: bold;
-}
-#day2{
-  font-weight: bold;
-}
-#image0{
-  height: 50px;
-  width: 50px;
-}
-#image1{
-  height: 50px;
-  width: 50px;
-}
-#image2{
+
+img{
   height: 50px;
   width: 50px;
 }
