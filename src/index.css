@@ -43,6 +43,9 @@ code {
 }
 
 img{
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
+}
+h1{
+  margin-top: 10px;
 }
