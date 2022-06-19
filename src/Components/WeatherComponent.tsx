@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from 'react';
-
-
 interface IProps{
     day: string;
     time: string | undefined;
@@ -12,23 +9,15 @@ interface IProps{
 
 export default function WeatherComponent(props: IProps)
 {
-    const [weatherInf, setWeather] = useState<IProps>();
-    
-    useEffect(() => {
-        
-        setWeather(props);
-        
-    },[props]);
-    
-    if(weatherInf?.description !== undefined || weatherInf?.image !== undefined || weatherInf?.temp !== undefined || weatherInf?.time !== undefined)
+    if(props.time !== undefined)
     {
         return(
             <div className={"daydiv"}>
-                <div className='day'>{weatherInf?.day}</div>
-                <div>{weatherInf?.time}</div>
-                <div>{weatherInf?.description}</div>
-                <img src={'http://openweathermap.org/img/wn/' + weatherInf?.image + '@2x.png'} alt="weather_image"></img>
-                <h1>{weatherInf?.temp + "°C"}</h1>
+                <div className='day'>{props?.day}</div>
+                <div>{props?.time}</div>
+                <div>{props?.description}</div>
+                <img src={'http://openweathermap.org/img/wn/' + props?.image + '@2x.png'} alt="weather_image"></img>
+                <h1>{props?.temp + "°C"}</h1>
             </div>
         )
     }
